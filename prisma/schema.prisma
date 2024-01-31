@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model UserRoles {
+    roleId          Int         @id @unique @default(autoincrement())
+    @@map(name: "userRoles")
+}
+
+model UserProfile {
+    userId          Int         @id @unique @default(autoincrement())
+    discordId       BigInt
+
+    name            String
+    surname         String
+    email           String      @unique
+    roleId          Int         
+
+    badges          Int[]
+    sound           Bytes    
+    level           Int    
+
+    @@map(name: "userAccounts")
+}
+
+model Badge {
+    badgeId         Int         @id @unique
+    name            String
+    description     String
+
+    @@map(name: "badges")
+}
