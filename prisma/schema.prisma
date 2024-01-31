@@ -22,17 +22,18 @@ model UserProfile {
     email           String      @unique
     roleId          Int         
 
-    badges          Int[]
+    badges          Badge[]
     sound           Bytes    
     level           Int    
 
-    @@map(name: "userAccounts")
+    @@map(name: "userProfiles")
 }
 
 model Badge {
     badgeId         Int         @id @unique
     name            String
     description     String
+    users           UserProfile[]
 
     @@map(name: "badges")
 }

@@ -7,12 +7,12 @@ import { PostProps } from "../../components/Post"
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = {
     id: "1",
-    title: "Prisma is the perfect ORM for Next.js",
-    content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
-    published: false,
+    title: "Test ",
+    content: "[link](https://github.com) adflkjafd",
+    published: true,
     author: {
-      name: "Nikolas Burk",
-      email: "burk@prisma.io",
+      name: "bebebebebebebeeb",
+      email: "carton@gmilk.com",
     },
   }
   return {
@@ -30,7 +30,7 @@ const Post: React.FC<PostProps> = (props) => {
     <Layout>
       <div>
         <h2>{title}</h2>
-        <p>By {props?.author?.name || "Unknown author"}</p>
+        <p>hello {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
       </div>
       <style jsx>{`
