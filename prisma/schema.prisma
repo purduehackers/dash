@@ -8,6 +8,25 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
+model Post {
+  id        String     @default(cuid()) @id
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String?
+}
+
+model User {
+  id            String       @default(cuid()) @id
+  name          String?
+  email         String?   @unique
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  posts         Post[]
+  @@map(name: "users")
+}
+
 model UserRoles {
     roleId          Int         @id @unique @default(autoincrement())
     @@map(name: "userRoles")
@@ -15,7 +34,7 @@ model UserRoles {
 
 model UserProfile {
     userId          Int         @id @unique @default(autoincrement())
-    discordId       BigInt
+    discordId       String
 
     name            String
     surname         String
@@ -23,7 +42,7 @@ model UserProfile {
     roleId          Int         
 
     badges          Badge[]
-    sound           Bytes    
+    sound           String  
     level           Int    
 
     @@map(name: "userProfiles")

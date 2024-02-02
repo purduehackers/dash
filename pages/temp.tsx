@@ -3,13 +3,15 @@
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
+import Post, { PostProps } from "../components/Post"
 import Profile, { ProfileProps } from "../components/Profile"
 
 import prisma from '../lib/prisma'
+//import { UserProfile } from "@prisma/client"
 
 export const getStaticProps: GetStaticProps = async () => {
   const userProfile = await prisma.userProfile.findMany({
-    where: { userId: 0 },
+    where: { roleId: 2 },
     include: {
       badges: true
     }
@@ -33,9 +35,9 @@ const Blog: React.FC<Props> = (props) => {
           {
             //<Profile profile={props.userProfile[0]} />
           }
-          {props.userProfile.map((prof) => (
-            <div key={prof.userId} className="post">
-              <Profile profile={prof} />
+          {props.userProfile.map((post) => (
+            <div key={post.userId} className="post">
+              <Profile profile={post} />
             </div>
           ))}
         </main>
