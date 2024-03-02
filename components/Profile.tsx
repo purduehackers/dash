@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "next/router";
 import ReactMarkdown from "react-markdown";
+import Badge from "./Badge";
 
 export type ProfileProps = {
     userId: number,
@@ -17,27 +18,31 @@ export type ProfileProps = {
 };
 
 const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
-    console.log(profile)
     return (
         <div onClick={() => Router.push("/p/[id]", `/p/${profile.userId}`)}>
-            <h2>{profile.name} {profile.surname}</h2>
-            <small>{profile.email}</small>
-            <ReactMarkdown children={profile.discordId} />
-            <p>Level: {profile.level}</p>
-            <p>Badges: {profile.badges[0].description}</p>
-            <p>
-                {profile.badges.map((badge) => {
-                    <div key={badge.badgeId}>
-                        hello dtes asf
-                        <p>aflkjslfkj</p>
-                        {badge.badgeId} {badge.name} {badge.description}
+            <div>
+                <h2>{profile.name} {profile.surname}</h2>
+                <small>{profile.email}</small>
+                <ReactMarkdown children={profile.discordId} />
+                <p>Level: {profile.level}</p>
+                <p>Badges</p>
+            </div>
+            <div>
+                {profile.badges.map((badge) => (
+                    <div key={badge.badgeId} className="badge-panel">
+                        <Badge badge={badge} />
                     </div>
-                })}
-            </p>
+                ))}
+            </div>
             <style jsx>{`
                 div {
-                color: inherit;
-                padding: 2rem;
+                    color: inherit;
+                    padding: 2rem;
+                    margin: 1rem 0;
+                    border: 2px solid black;
+                }
+                .badge-panel {
+                    border: 2px solid black;
                 }
             `}</style>
         </div>

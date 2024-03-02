@@ -11,8 +11,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const userProfile = await prisma.userProfile.findMany({
     where: { userId: 0 },
     include: {
-      badges: true
-    }
+      badges: true,
+    },
   })
   return { 
     props: { userProfile }, 
