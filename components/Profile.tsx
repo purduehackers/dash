@@ -20,8 +20,8 @@ export type ProfileProps = {
 const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
     return (
         <div onClick={() => Router.push("/p/[id]", `/p/${profile.userId}`)}>
-            <div>
-                <h2>{profile.name} {profile.surname}</h2>
+            <div className="box">
+                <h2 className="text-xl font-bold">{profile.name} {profile.surname}</h2>
                 <small>{profile.email}</small>
                 <ReactMarkdown children={profile.discordId} />
                 <p>Level: {profile.level}</p>
@@ -29,7 +29,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
             </div>
             <div>
                 {profile.badges.map((badge) => (
-                    <div key={badge.badgeId} className="badge-panel">
+                    <div key={badge.badgeId} className="badge-panel box">
                         <Badge badge={badge} />
                     </div>
                 ))}
@@ -40,6 +40,12 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
                     padding: 2rem;
                     margin: 1rem 0;
                     border: 2px solid black;
+                }
+                .box {
+                    box-shadow: 5px 5px 0px #aaa;
+                }
+                .box:hover {
+                    box-shadow: 5px 5px 0px #fad655;
                 }
                 .badge-panel {
                     border: 2px solid black;

@@ -26,7 +26,7 @@ const Dash: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
-        <h1 className="text-3xl font-bold underline text-amber-400">PH Dashboard</h1>
+        <h1 className="text-3xl font-bold underline text-amber-500">PH Dashboard</h1>
         <main>
           {
             //<Profile profile={props.userProfile[0]} />
@@ -42,10 +42,7 @@ const Dash: React.FC<Props> = (props) => {
         .post {
           background: white;
           transition: box-shadow 0.1s ease-in;
-        }
-
-        .post:hover {
-          box-shadow: 1px 1px 3px #aaa;
+          box-shadow: 5px 5px 0 black;
         }
 
         .post + .post {
