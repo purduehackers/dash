@@ -28,7 +28,7 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
-        <h1>PH Dashboard</h1>
+        <h1 className="text-3xl font-bold underline">PH Dashboard</h1>
         <main>
           {
             //<Profile profile={props.userProfile[0]} />
