@@ -1,5 +1,3 @@
-
-
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
@@ -24,11 +22,11 @@ type Props = {
   userProfile: ProfileProps[],
 }
 
-const Blog: React.FC<Props> = (props) => {
+const Dash: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
-        <h1 className="text-3xl font-bold underline">PH Dashboard</h1>
+        <h1 className="text-3xl font-bold underline text-amber-400">PH Dashboard</h1>
         <main>
           {
             //<Profile profile={props.userProfile[0]} />
@@ -58,4 +56,4 @@ const Blog: React.FC<Props> = (props) => {
   )
 }
 
-export default Blog
+export default Dash
