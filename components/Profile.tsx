@@ -1,5 +1,5 @@
 import React from "react";
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import Badge from "./Badge";
 
@@ -18,8 +18,10 @@ export type ProfileProps = {
 };
 
 const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
+    const router = useRouter()
+
     return (
-        <div onClick={() => Router.push("/p/[id]", `/p/${profile.userId}`)}>
+        <div onClick={() => router.push("/p/[id]"/*, `/p/${profile.userId}`*/)}>
             <div className="box">
                 <h2 className="text-xl font-bold">{profile.name} {profile.surname}</h2>
                 <small>{profile.email}</small>

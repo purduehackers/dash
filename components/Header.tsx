@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 //import { signOut, useSession } from 'next-auth/react';
 
 const Header: React.FC = () => {
   const router = useRouter();
+  /*const isActive: (pathname: string) => boolean = (pathname) =>
+    router.pathname === pathname;*/
+
   const isActive: (pathname: string) => boolean = (pathname) =>
-    router.pathname === pathname;
+    usePathname() === pathname;
 
   //const { data: session, status } = useSession();
   let session = {
