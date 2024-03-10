@@ -1,40 +1,10 @@
 'use client'
 
 import React from "react"
-import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Profile, { ProfileProps } from "../components/Profile"
-
-/*export const getStaticProps: GetStaticProps = async () => {
-  const userProfile = await prisma.userProfile.findMany({
-    where: { userId: 0 },
-    include: {
-      badges: true,
-    },
-  })
-  return { 
-    props: { userProfile }, 
-    revalidate: 10 
-  }
-}*/
-
-
-/*export const getProfile = async () => {
-    const userProfile = await prisma.userProfile.findMany({
-        where: { userId: 0 },
-        include: {
-          badges: true,
-        },
-    })
-    return userProfile
-}*/
-
-/*type Props = {
-  userProfile: ProfileProps[],
-}*/
+import Profile from "../components/Profile"
 
 export default async function Dash({ userProfile }) {
-    //const userProfile = await getProfile()
     return (
         <Layout>
             <div className="page">

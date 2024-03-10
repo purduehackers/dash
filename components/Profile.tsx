@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -17,11 +19,11 @@ export type ProfileProps = {
     }[] | null
 };
 
-const Profile: React.FC<{ profile: ProfileProps }> = ({ profile }) => {
+const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
     const router = useRouter()
 
     return (
-        <div onClick={() => router.push("/p/[id]"/*, `/p/${profile.userId}`*/)}>
+        <div onClick={() => router.push(`/p/${profile.userId}`)}>
             <div className="box">
                 <h2 className="text-xl font-bold">{profile.name} {profile.surname}</h2>
                 <small>{profile.email}</small>

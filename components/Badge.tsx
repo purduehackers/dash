@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -10,10 +12,9 @@ export type BadgeProps = {
 
 const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
   const router = useRouter()
-  //console.log(badge)
   const name = badge.name ? badge.name : "Unknown";
   return (
-    <div onClick={() => router.push(/*"/p/[id]", */`/p/${badge.badgeId}`)}>
+    <div onClick={() => router.push(`/p/${badge.badgeId}`)}>
         <h2>Badge: {name}</h2>
         <small>{badge.badgeId}</small>
         <ReactMarkdown children={badge.description} />

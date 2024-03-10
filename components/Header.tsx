@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
@@ -5,8 +7,6 @@ import { useRouter, usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const router = useRouter();
-  /*const isActive: (pathname: string) => boolean = (pathname) =>
-    router.pathname === pathname;*/
 
   const isActive: (pathname: string) => boolean = (pathname) =>
     usePathname() === pathname;

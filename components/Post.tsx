@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Router from "next/router";
 import ReactMarkdown from "react-markdown";
