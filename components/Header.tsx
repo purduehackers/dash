@@ -94,7 +94,7 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link href="/api/auth/login" data-active={isActive('/signup')}>
+        <Link href="/auth" data-active={isActive('/signup')}>
           Log in
         </Link>
         <style jsx>{`

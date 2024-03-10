@@ -9,11 +9,14 @@ export interface IDAuthResponse {
 
 export async function GET(req: Request) {
   const code = req.url.split("=")[1];
+  console.log('code: ' + code)
   const destinationUrl = new URL("/", new URL(req.url).origin);
+  console.log('dest: ' + destinationUrl);
   const response = NextResponse.redirect(destinationUrl);
+  console.log('response: ' + response);
 
   if (code && code !== "") {
-    let URL = "passports-dashboard.vercel.app";
+    let URL = "dash.purduehackers.com";
     //URL = "localhost:3000";
     const resp = await fetch("https://id.purduehackers.com/api/token", {
         method: "POST",

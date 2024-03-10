@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 
 import HomePage from './home-page';
 import LoginPage from './login-page';
+import SignInPage from "./auth/page";
 
 import prisma from '../lib/prisma';
  
@@ -22,16 +23,17 @@ async function getProfile() {
     return userProfile;
 }
 
-/*export default async function Page() {
+export default async function Page() {
   // Fetch data directly in a Server Component
   const userProfile = await getProfile()
 
   // Forward fetched data to your Client Component
   return <HomePage userProfile={userProfile} />
+  return <SignInPage />
   return <LoginPage />
-}*/
+}
 
-export default function Home() {
+/*export default function Home() {
   const accessToken = cookies().get("phIdAccessToken")?.value;
   const tokenType = cookies().get("phIdTokenType")?.value;
   const expiresIn = cookies().get("phIdExpiresIn")?.value;
@@ -66,4 +68,4 @@ export default function Home() {
       </main>
     );
   }
-}
+}*/
