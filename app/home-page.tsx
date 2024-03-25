@@ -15,7 +15,7 @@ export default async function Dash({ userProfile }) {
                 }
                 {userProfile.map((prof) => (
                     <div key={prof.userId} className="post">
-                    <Profile profile={prof} />
+                        <Profile profile={prof} />
                     </div>
                 ))}
                 </main>

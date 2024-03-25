@@ -1,5 +1,6 @@
 import { clearCookies } from "../lib/actions";
 import { cookies } from "next/headers";
+import Script from "next/script";
 
 import HomePage from './home-page';
 import LoginPage from './login-page';
@@ -28,7 +29,17 @@ export default async function Page() {
   const userProfile = await getProfile()
 
   // Forward fetched data to your Client Component
-  return <HomePage userProfile={userProfile} />
+  return (
+    <>
+      <Script
+        async
+        strategy='afterInteractive'
+        type='module'
+        src='https://unpkg.com/@google/model-viewer@^3.4.0/dist/model-viewer.min.js'
+      />
+      <HomePage userProfile={userProfile} />
+    </>
+  )
   return <SignInPage />
   return <LoginPage />
 }
