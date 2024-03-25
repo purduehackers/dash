@@ -13,9 +13,13 @@ export type BadgeProps = {
 };
 
 const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
-  const router = useRouter()
+  const router = useRouter();
   const name = badge.name ? badge.name : "Unknown";
-  const modelPath = "/assets/badge2.2.glb"
+  const modelPath = "/assets/badge2.2.glb";
+
+  //const modelViewer = document.querySelector("model-viewer#badge-model");
+  //modelViewer.scale = "2 2 2";
+
   return (
     <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}>
         <h2>Badge: {name}</h2>
@@ -27,18 +31,23 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
 
         <model-viewer id="badge-model" 
           src={modelPath}
-          alt="Badge"
+          alt="Badge" with-credentials
           interaction-prompt="none" 
           camera-controls disable-pan disable-tap disable-zoom
-          auto-rotate auto-rotate-delay="1000"
           rotation-per-second="10deg" 
-          camera-orbit="30deg 75deg 0deg"
-          ios-src="/assets/badge2.2.glb"></model-viewer>
+          camera-orbit="0deg 0deg 0deg"
+          max-camera-orbit="Infinity Infinity Infinity"
+          shadow-intensity="1"
+          ios-src={modelPath}></model-viewer>
         
         <style jsx>{`
             div {
-                color: inherit;
-                padding: 2rem;
+              color: inherit;
+              padding: 2rem;
+            }
+            model-viewer {
+              width: calc(100% - 1.25rem);
+              height: calc(100vh - 1.25rem);
             }
         `}</style>
     </div>

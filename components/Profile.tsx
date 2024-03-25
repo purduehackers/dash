@@ -31,7 +31,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                 <p>Level: {profile.level}</p>
                 <p>Badges</p>
             </div>
-            <div>
+            <div className="badges-container">
                 {profile.badges.map((badge) => (
                     <div key={badge.badgeId} className="badge-panel box">
                         <Badge badge={badge} />
@@ -51,8 +51,14 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                 .box:hover {
                     box-shadow: 5px 5px 0px #fad655;
                 }
+                .badges-container {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
                 .badge-panel {
                     border: 2px solid black;
+                    width: 49%;
                 }
             `}</style>
         </div>
