@@ -16,7 +16,7 @@ async function getPosts() {
 
 async function getProfile() {
     const userProfile = await prisma.userProfile.findMany({
-        where: { userId: 0 },
+        where: { userId: 1 },
         include: {
           badges: true,
         },

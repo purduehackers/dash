@@ -28,31 +28,33 @@ model User {
 }
 
 model UserRoles {
-    roleId          Int         @id @unique @default(autoincrement())
-    @@map(name: "userRoles")
+  roleId          Int         @id @unique @default(autoincrement())
+  @@map(name: "userRoles")
 }
 
 model UserProfile {
-    userId          Int         @id @unique @default(autoincrement())
-    discordId       String
+  userId          Int         @id @unique @default(autoincrement())
+  discordId       String
 
-    name            String
-    surname         String
-    email           String      @unique
-    roleId          Int         
+  name            String
+  surname         String
+  email           String      @unique
+  roleId          Int         
 
-    badges          Badge[]
-    sound           String  
-    level           Int    
+  badges          Badge[]
+  sound           String  
+  level           Int    
 
-    @@map(name: "userProfiles")
+  @@map(name: "userProfiles")
 }
 
 model Badge {
-    badgeId         Int         @id @unique
-    name            String
-    description     String
-    users           UserProfile[]
+  badgeId         Int         @id @unique @default(autoincrement())
+  majorVersion    Int
+  minorVersion    Int
+  name            String
+  description     String
+  users           UserProfile[]
 
-    @@map(name: "badges")
+  @@map(name: "badges")
 }

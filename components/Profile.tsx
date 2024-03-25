@@ -14,6 +14,8 @@ export type ProfileProps = {
     level: number,
     badges: {
         badgeId: number,
+        majorVersion: number,
+        minorVersion: number,
         name: string,
         description: string
     }[] | null
