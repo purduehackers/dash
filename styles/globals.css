@@ -3,21 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  @media print {
-    @page :first {
-      margin: 0 0 15mm 0;
-    }
-    @page {
-      margin-top: 15mm;
-      margin-bottom: 15mm;
-      margin-left: 0;
-      margin-right: 0;
-    }
+  html {
+    background-color: rgb(28, 28, 28);
   }
   body {
     /*@apply font-main;*/
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  div {
+    background-color: rgb(28, 28, 28);
+    color: white;
   }
   :not(.message *) > ::selection {
     background: #fcd34d;
@@ -25,7 +21,7 @@
 
   model-viewer {
     position: relative;
-    top: -150px;
+    top: -110px;
     left: -30px;
     width: 35vw;
     height: 80vh;

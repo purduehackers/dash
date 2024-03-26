@@ -45,10 +45,10 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                     color: inherit;
                     padding: 2rem;
                     margin: 1rem 0;
-                    border: 2px solid black;
+                    border: 2px solid rgb(220, 220, 220);
                 }
                 .box {
-                    box-shadow: 5px 5px 0px #aaa;
+                    box-shadow: 5px 5px 0px rgb(155, 94, 255);
                 }
                 .box:hover {
                     box-shadow: 5px 5px 0px #fad655;
@@ -59,7 +59,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                     flex-wrap: wrap;
                 }
                 .badge-panel {
-                    border: 2px solid black;
+                    border: 2px solid  rgb(220, 220, 220);
                     width: 49%;
                 }
             `}</style>

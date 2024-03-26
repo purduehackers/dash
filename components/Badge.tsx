@@ -25,12 +25,10 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
   return (
     <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}
       className="h-96">
-        <h2>Badge {badge.badgeId}</h2>
+        <h2 className="text-amber-400 font-bold text-lg">Badge {badge.badgeId}</h2>
         <h2>{name}</h2>
-        <small>{badge.badgeId}</small>
+        <small>000{badge.badgeId}</small>
         <p>{badge.description}</p>
-
-        {version}  <br/> <br/>
         <model-viewer className="modelViewer"
           id="badge-model" 
           src={modelPath}
@@ -38,9 +36,9 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
           interaction-prompt="none" 
           camera-controls disable-pan disable-tap disable-zoom
           auto-rotate rotation-per-second="10deg" 
-          camera-orbit="45deg 75deg 0"
+          camera-orbit="45deg 65deg 0"
           max-camera-orbit="auto 115deg 0"
-          min-camera-orbit="auto 65deg 0"
+          min-camera-orbit="auto 45deg 0"
           shadow-intensity="1"
           ios-src={modelPath}></model-viewer>
         

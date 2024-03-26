@@ -23,8 +23,8 @@ export default async function Dash({ userProfile }) {
             <style jsx>{`
                 .post {
                 background: white;
-                transition: box-shadow 0.1s ease-in;
-                box-shadow: 5px 5px 0 black;
+                    transition: box-shadow 0.1s ease-in;
+                    box-shadow: 5px 5px 0 rgb(100, 100, 100);
                 }
 
                 .post + .post {
