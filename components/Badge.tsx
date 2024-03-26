@@ -23,23 +23,24 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
   //modelViewer.scale = "2 2 2";
 
   return (
-    <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}>
+    <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}
+      className="h-96">
         <h2>Badge {badge.badgeId}</h2>
         <h2>{name}</h2>
         <small>{badge.badgeId}</small>
-        <ReactMarkdown children={badge.description} />
+        <p>{badge.description}</p>
 
         {version}  <br/> <br/>
-
-        <model-viewer w-5
+        <model-viewer className="modelViewer"
           id="badge-model" 
           src={modelPath}
           alt="Badge" with-credentials
           interaction-prompt="none" 
           camera-controls disable-pan disable-tap disable-zoom
-          rotation-per-second="10deg" 
-          camera-orbit="0deg 0deg 0deg"
-          max-camera-orbit="auto 360deg 360deg"
+          auto-rotate rotation-per-second="10deg" 
+          camera-orbit="45deg 75deg 0"
+          max-camera-orbit="auto 115deg 0"
+          min-camera-orbit="auto 65deg 0"
           shadow-intensity="1"
           ios-src={modelPath}></model-viewer>
         

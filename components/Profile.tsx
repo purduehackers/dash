@@ -29,7 +29,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
             <div className="box">
                 <h2 className="text-xl font-bold">{profile.name} {profile.surname}</h2>
                 <small>{profile.email}</small>
-                <ReactMarkdown children={profile.discordId} />
+                <p>{profile.discordId}</p>
                 <p>Level: {profile.level}</p>
                 <p>Badges</p>
             </div>
