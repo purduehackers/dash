@@ -17,7 +17,8 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
   const name = badge.name ? badge.name : "Unknown";
 
   const version = parseFloat(badge.majorVersion + "." + badge.minorVersion);
-  const modelPath = `/assets/badge${version}.glb`;
+  let modelPath = `/assets/badge${version}.glb`;
+  //modelPath = "/assets/passport.glb";
 
   //const modelViewer = document.querySelector("model-viewer#badge-model");
   //modelViewer.scale = "2 2 2";
@@ -35,7 +36,7 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
           alt="Badge" with-credentials
           interaction-prompt="none" 
           camera-controls disable-pan disable-tap disable-zoom
-          auto-rotate rotation-per-second="10deg" 
+          auto-rotate rotation-per-second="15deg" 
           camera-orbit="45deg 65deg 0"
           max-camera-orbit="auto 115deg 0"
           min-camera-orbit="auto 45deg 0"
@@ -46,10 +47,6 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
             div {
               color: inherit;
               padding: 2rem;
-            }
-            model-viewer {
-              width: calc(100% - 1.25rem);
-              height: calc(100vh - 1.25rem);
             }
         `}</style>
     </div>
