@@ -20,9 +20,6 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
   let modelPath = `/assets/badge${version}.glb`;
   //modelPath = "/assets/passport.glb";
 
-  //const modelViewer = document.querySelector("model-viewer#badge-model");
-  //modelViewer.scale = "2 2 2";
-
   return (
     <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}
       className="h-96">
@@ -41,6 +38,7 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
           max-camera-orbit="auto 115deg 0"
           min-camera-orbit="auto 45deg 0"
           shadow-intensity="1"
+          tone-mapping="commerce"
           ios-src={modelPath}></model-viewer>
         
         <style jsx>{`
