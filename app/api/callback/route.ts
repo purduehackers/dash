@@ -24,7 +24,7 @@ export async function GET(req: Request) {
                 grant_type: "authorization_code",
                 code,
                 client_id: "dashboard",
-                //redirect_uri: `https://${URL}/api/callback`,
+                redirect_uri: `https://${URL}/api/callback`,
             }).toString(),
         })
             .then((r) => r.json())
