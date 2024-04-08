@@ -18,11 +18,10 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
 
   const version = parseFloat(badge.majorVersion + "." + badge.minorVersion);
   let modelPath = `/assets/badge${version}.glb`;
-  //modelPath = "/assets/passport.glb";
 
   return (
     <div onClick={() => console.log("badge clicked")/*router.push(`/p/${badge.badgeId}`)*/}
-      className="h-96">
+      className="w-[49%] max-w-3xl h-[450px] p-16 my-4 rounded-md border-2 border-solid border-neutral-200">
         <h2 className="text-amber-400 font-bold text-lg">Badge {badge.badgeId}</h2>
         <h2>{name}</h2>
         <small>000{badge.badgeId}</small>
@@ -40,13 +39,6 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
           shadow-intensity="1"
           tone-mapping="commerce"
           ios-src={modelPath}></model-viewer>
-        
-        <style jsx>{`
-            div {
-              color: inherit;
-              padding: 2rem;
-            }
-        `}</style>
     </div>
   );
 };
