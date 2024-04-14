@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react"
+import Link from 'next/link';
 import Layout from "../components/Layout"
 import Profile from "../components/Profile"
 
@@ -14,12 +15,16 @@ export default async function Dash({ userProfile }) {
                         <h1 className="text-3xl font-bold text-amber-500">PH Dashboard</h1>
                     </div>
                     <div className="flex flex-row">
-                        <div className="p-16 ml-4 rounded-md border-2 border-solid border-neutral-200 font-bold ">
-                            Register
-                        </div>
-                        <div className="p-16 ml-4 rounded-md border-2 border-solid border-neutral-200 font-bold ">
-                            Sign in with Passport
-                        </div>
+                        <Link href="https://passport-data-pages.vercel.app/">
+                            <div className="p-16 ml-4 rounded-md border-2 border-solid border-neutral-200 font-bold ">
+                                Register
+                            </div>
+                        </Link>
+                        <Link href="/auth">
+                            <div className="p-16 ml-4 rounded-md border-2 border-solid border-neutral-200 font-bold ">
+                                Sign in with Passport
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <h1 className="text-2xl font-bold underline">Users ↓</h1>

@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/" className="bold" data-active={isActive('/')}>
+      <Link href="/" className="italic" data-active={isActive('/')}>
         dash dash dash dash
       </Link>
     </div>

@@ -31,7 +31,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                 <small>{profile.email}</small>
                 <p>{profile.discordId}</p>
                 <p>Level: {profile.level}</p>
-                <p>Badges</p>
+                <p>{profile.badges.length} Badges</p>
             </div>
             <div className="flex justify-between flex-wrap">
                 {profile.badges.map((badge) => (
