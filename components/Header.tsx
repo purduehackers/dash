@@ -7,6 +7,7 @@ import { useRouter, usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const router = useRouter();
+  //const accessToken = cookies().get("phIdAccessToken")?.value;
 
   const isActive: (pathname: string) => boolean = (pathname) =>
     usePathname() === pathname;
@@ -26,25 +27,6 @@ const Header: React.FC = () => {
       <Link href="/" className="bold" data-active={isActive('/')}>
         dash dash dash dash
       </Link>
-      <style jsx>{`
-        .bold {
-          font-weight: bold;
-        }
-
-        a {
-          text-decoration: none;
-          color: var(--geist-foreground);
-          display: inline-block;
-        }
-
-        .left a[data-active='true'] {
-          color: gray;
-        }
-
-        a + a {
-          margin-left: 1rem;
-        }
-      `}</style>
     </div>
   );
 
@@ -201,16 +183,9 @@ const Header: React.FC = () => {
   }
 
   return (
-    <nav>
+    <nav className="flex p-6 items-center border-b-2 border-b-solid border-b-neutral-200">
       {left}
       {right}
-      <style jsx>{`
-        nav {
-          display: flex;
-          padding: 2rem;
-          align-items: center;
-        }
-      `}</style>
     </nav>
   );
 };
