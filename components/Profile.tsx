@@ -26,8 +26,11 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
     const router = useRouter();
 
     return (
-        <div onClick={() => console.log("profile clicked") /*router.push(`/p/${profile.userId}`)*/}>
-            <div className="box">
+        <div className="p-8 my-4 border-2 border-solid border-neutral-200
+                        shadow-blocks-md shadow-indigo-500 hover:shadow-amber-400"
+                onClick={() => console.log("profile clicked") /*router.push(`/p/${profile.userId}`)*/}>
+            <div className="p-8 my-4 border-2 border-solid border-neutral-200
+                            shadow-blocks-md shadow-indigo-500 hover:shadow-amber-400">
                 <h2 className="text-xl font-bold">{profile.name} {profile.surname}</h2>
                 <small>{profile.email}</small>
                 <p>{profile.discordId}</p>
@@ -39,20 +42,6 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
                     <Badge key={badge.badgeId} badge={badge}/>
                 ))}
             </div>
-            <style jsx>{`
-                div {
-                    color: inherit;
-                    padding: 2rem;
-                    margin: 1rem 0;
-                    border: 2px solid rgb(220, 220, 220);
-                }
-                .box {
-                    box-shadow: 5px 5px 0px rgb(155, 94, 255);
-                }
-                .box:hover {
-                    box-shadow: 5px 5px 0px #fad655;
-                }
-            `}</style>
         </div>
     );
 };
