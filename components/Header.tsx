@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation';
 //import { signOut, useSession } from 'next-auth/react';
 
@@ -23,7 +24,15 @@ const Header: React.FC = () => {
   const status = 'test'
 
   let left = (
-    <div className="left">
+    <div className="flex flex-row items-center">
+      <Image className="mr-4"
+        src="/ph-logo-outline.svg"
+        alt="Picture of the author"
+        width={30}
+        height={30}
+        // blurDataURL="data:..." automatically provided
+        // placeholder="blur" // Optional blur-up while loading
+      />
       <Link href="/" className="italic" data-active={isActive('/')}>
         dash dash dash dash
       </Link>
@@ -183,7 +192,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <nav className="flex p-6 items-center border-b-2 border-b-solid border-b-neutral-200">
+    <nav className="flex h-20 px-8 items-center border-b-2 border-b-solid border-b-neutral-200">
       {left}
       {right}
     </nav>

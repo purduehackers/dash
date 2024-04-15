@@ -26,8 +26,7 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
         <h2>{name}</h2>
         <small>000{badge.badgeId}</small>
         <p>{badge.description}</p>
-        <model-viewer className="modelViewer"
-          id="badge-model" 
+        <model-viewer className="badge-model"
           src={modelPath}
           alt="Badge" with-credentials
           interaction-prompt="none" 

@@ -38,7 +38,7 @@ export default async function Dash({ userProfile }) {
                 {userProfile.map((prof) => (
                     <div onClick={() => router.push(`/profile/${prof.userId}`)}
                             key={prof.userId} 
-                            className="p-4 my-4 rounded-md flex flex-row justify-between align-center
+                            className="p-4 my-4 rounded-md flex flex-row justify-between items-center
                                 border-2 border-solid border-neutral-200">
                         <h2 className="text-lg text-amber-400 font-bold">{prof.name} {prof.surname}</h2>
                         <p>Level: {prof.level}</p>
