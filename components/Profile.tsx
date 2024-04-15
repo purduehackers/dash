@@ -36,7 +36,7 @@ const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
             </div>
             <div className="flex justify-between flex-wrap">
                 {profile.badges.map((badge) => (
-                    <Badge badge={badge}/>
+                    <Badge key={badge.badgeId} badge={badge}/>
                 ))}
             </div>
             <style jsx>{`
