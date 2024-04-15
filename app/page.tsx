@@ -40,8 +40,6 @@ export default async function Page() {
       <HomePage userProfile={userProfile} />
     </>
   )
-  return <SignInPage />
-  return <LoginPage />
 }
 
 /*export default function Home() {

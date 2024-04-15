@@ -77,7 +77,7 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <Link href="/auth" data-active={isActive('/signup')}>
-          Log in
+          hack
         </Link>
         <style jsx>{`
           a {

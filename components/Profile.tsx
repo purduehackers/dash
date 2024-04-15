@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import Badge from "./Badge";
+import Link from "next/link";
 
 export type ProfileProps = {
     userId: number,
@@ -22,7 +23,7 @@ export type ProfileProps = {
 };
 
 const Profile: React.FC<{ profile: ProfileProps }> = ({ profile = null }) => {
-    const router = useRouter()
+    const router = useRouter();
 
     return (
         <div onClick={() => console.log("profile clicked") /*router.push(`/p/${profile.userId}`)*/}>
