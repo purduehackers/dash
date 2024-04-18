@@ -1,12 +1,13 @@
-'use client'
+'use client';
 
-import React from "react"
+import React from "react";
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
-import Layout from "../components/Layout"
-import Profile from "../components/Profile"
+import Layout from "../components/Layout";
+import Profile from "../components/Profile";
+import Badge from "../components/Badge";
 
-export default async function Dash({ userProfile }) {
+export default async function Dash({ userProfile, badges }) {
     const router = useRouter();
     return (
         <Layout>
@@ -48,6 +49,14 @@ export default async function Dash({ userProfile }) {
                         </button>
                     </div>
                 ))}
+                </main>
+                <h1 className="text-2xl font-bold underline">Badges ↓</h1>
+                <main>
+                    <div className="flex justify-between flex-wrap">
+                        {badges.map((badge) => (
+                            <Badge key={badge.badgeId} badge={badge}/>
+                        ))}
+                    </div>
                 </main>
             </div>
         </Layout>

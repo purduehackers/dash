@@ -27,16 +27,17 @@ const Badge: React.FC<{ badge: BadgeProps }> = ({ badge }) => {
         <small>000{badge.badgeId}</small>
         <p>{badge.description}</p>
         <model-viewer className="badge-model"
-          src={modelPath}
+          src={`/assets/badge${version}.glb`}
           alt="Badge" with-credentials
           interaction-prompt="none" 
           camera-controls disable-pan disable-tap disable-zoom
-          auto-rotate rotation-per-second="15deg" 
+          auto-rotate rotation-per-second="90deg" 
           camera-orbit="45deg 65deg 0"
           max-camera-orbit="auto 115deg 0"
           min-camera-orbit="auto 45deg 0"
           shadow-intensity="1"
-          tone-mapping="commerce"
+          environment-image="/assets/courtyard.hdr"
+          tone-mapping="neutral"
           ios-src={modelPath}></model-viewer>
     </div>
   );
