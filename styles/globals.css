@@ -42,7 +42,7 @@
 @layer components {
   .btn1 {
     @apply relative px-3 py-1 rounded-md border-2 border-solid border-white 
-    transition duration-200 ease-in-out font-bold min-w-fit max-w-56
+    transition duration-200 ease-in-out font-bold 
     shadow-blocks-md shadow-indigo-500 hover:bg-white hover:text-dark;
   }
   .btn-outline {
