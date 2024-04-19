@@ -13,7 +13,7 @@ export default async function Dash({ userProfile, badges }) {
         <Layout>
             <div className="px-4 py-8">
                 <div className="h-[85vh] p-8 flex flex-row justify-between items-center border-solid border-white">
-                    <div className="h-full flex flex-col justify-end items-start">
+                    <div className="h-full flex flex-col justify-center items-start">
                         <div className="my-4">
                             <h1 className="text-[9rem] leading-tight font-bold underline text-amber-400">--dash.</h1>
                             <h1 className="text-4xl font-bold text-amber-500">PH Dashboard</h1>
