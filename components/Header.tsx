@@ -87,7 +87,8 @@ const Header: React.FC = () => {
       <div className="ml-auto flex row">
         <Link className="inline-block border-l-2 border-b-[1px] px-10 h-20 flex items-center
                 hover:bg-indigo-500 transition duration-200 ease-in-out"
-            href="/auth" data-active={isActive('/signup')}>
+            href="https://id.purduehackers.com/api/authorize?client_id=dashboard&response_type=code"
+            data-active={isActive('/signup')}>
           sign in
         </Link>
         <Link className="inline-block border-l-2 border-b-[1px] px-10 h-20 flex items-center
